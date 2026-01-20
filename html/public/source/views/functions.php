@@ -1,5 +1,5 @@
 <?php
-include_once 'source/db.php';
+include_once 'source/ db.php';
 
 function getAllUsers() {
     global $pdo;
