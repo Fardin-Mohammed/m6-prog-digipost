@@ -20,3 +20,14 @@ foreach ($controllers as $i => $page)
 
 http_response_code(404);
 exit;
+
+
+function GetApiPath()
+{
+    $domain = $_SERVER['HTTP_HOST'];
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+    $basePath = dirname($_SERVER['SCRIPT_NAME']);
+
+    $apiBaseUrl = $scheme . "://" . $domain . $basePath;
+    return $apiBaseUrl;
+}
